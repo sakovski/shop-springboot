@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<nav th:replace="fragments/header :: header"/>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product :${products}">
+        <td th:text="${product.getName()}"></td>
+        <td th:text="${product.getProductCategory().getName()}"></td>
+        <td th:text="${product.getPrice() + ' PLN'}"></td>
+        <td th:text="${product.isAvailable()}"></td>
+        <td>
+            <a href="/product/details/" th:href="@{/product/details/__${product.id}__}" class="btn btn-success">Add to cart</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<footer th:replace="fragments/footer"></footer>
+</body>
+</html>

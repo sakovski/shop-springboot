@@ -117,4 +117,8 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public boolean isAvailable() {
+        return quantity > 0;
+    }
 }
