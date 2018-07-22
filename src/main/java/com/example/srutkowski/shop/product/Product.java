@@ -38,29 +38,17 @@ public class Product {
     @Column(name = "photo")
     private String photo;
 
-    @Column(name = "created_at")
-    private LocalDate createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDate updatedAt;
-
     @Column(name = "enabled")
     private boolean enabled;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private Set<OrderDetails> orderDetails;
-
-    public Product(@NotNull String name, @NotNull ProductCategory productCategory, String description, @NotNull BigDecimal price, int quantity, String photo, LocalDate createdAt, LocalDate updatedAt, boolean enabled, Set<OrderDetails> orderDetails) {
+    public Product(@NotNull String name, @NotNull ProductCategory productCategory, String description, @NotNull BigDecimal price, int quantity, String photo, boolean enabled) {
         this.name = name;
         this.productCategory = productCategory;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.photo = photo;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.enabled = enabled;
-        this.orderDetails = orderDetails;
     }
 
     public Product() {
@@ -114,22 +102,6 @@ public class Product {
         this.photo = photo;
     }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDate updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public boolean isEnabled() {
         return enabled;
     }
@@ -146,13 +118,7 @@ public class Product {
         this.id = id;
     }
 
-    public Set<OrderDetails> getOrderDetails() {
-        return orderDetails;
+    public boolean isAvailable() {
+        return quantity > 0;
     }
-
-    public void setOrderDetails(Set<OrderDetails> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
-
-
 }

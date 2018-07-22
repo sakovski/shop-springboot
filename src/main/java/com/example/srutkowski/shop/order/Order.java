@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Order {
 
     @Id
@@ -28,21 +28,13 @@ public class Order {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @Column(name = "created_at")
-    private LocalDate createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDate updatedAt;
-
     @Column(name = "enabled")
     private boolean enabled;
 
-    public Order(Set<OrderDetails> orderDetails, @NotNull User user, BigDecimal totalPrice, LocalDate createdAt, LocalDate updatedAt, boolean enabled) {
+    public Order(Set<OrderDetails> orderDetails, @NotNull User user, BigDecimal totalPrice, boolean enabled) {
         this.orderDetails = orderDetails;
         this.user = user;
         this.totalPrice = totalPrice;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.enabled = enabled;
     }
 
@@ -79,22 +71,6 @@ public class Order {
 
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDate updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     public boolean isEnabled() {

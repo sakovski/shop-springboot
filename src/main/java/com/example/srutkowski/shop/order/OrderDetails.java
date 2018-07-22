@@ -15,7 +15,7 @@ public class OrderDetails {
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "orders_id")
     //@JsonManagedReference
     private Order order;
 
