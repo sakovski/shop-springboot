@@ -20,7 +20,7 @@ public class UserRegisterService {
         //TODO : MAPPER, MAIL SENDING
         UserRole userRole = userRoleRepository.findByName(RoleType.CUSTOMER)
                 .orElseThrow(RuntimeException::new);
-        User userCandidate = new User(registerForm.getEmail(), registerForm.getPassword(), userRole, registerForm.getFirstName(), registerForm.getLastName(), false);
+        User userCandidate = new User(registerForm.getEmail(), bCryptPasswordEncoder.encode(registerForm.getPassword()), userRole, registerForm.getFirstName(), registerForm.getLastName(), false);
         userCreateService.createNew(userCandidate);
     }
 }
