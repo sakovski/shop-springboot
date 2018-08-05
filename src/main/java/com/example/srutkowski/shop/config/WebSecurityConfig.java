@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/home/index")
+                .defaultSuccessUrl("/")
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
@@ -46,12 +46,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         DaoAuthenticationProvider authProvider
                 = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService);
-        authProvider.setPasswordEncoder(encoder());
+        authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
 
     @Bean
-    public PasswordEncoder encoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
     }
 }

@@ -18,7 +18,8 @@ public class UserRole {
 
     @NotNull
     @Column(name = "name")
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private RoleType name;
 
     @OneToMany(mappedBy = "userRole", fetch = FetchType.EAGER)
     private Set<User> users;
@@ -26,7 +27,7 @@ public class UserRole {
     @Column(name = "enabled")
     private boolean enabled;
 
-    public UserRole(@NotNull String name, boolean enabled) {
+    public UserRole(@NotNull RoleType name, boolean enabled) {
         this.name = name;
         this.enabled = enabled;
         users = new HashSet<>();
@@ -35,11 +36,11 @@ public class UserRole {
     public UserRole() {
     }
 
-    public String getName() {
+    public RoleType getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(RoleType name) {
         this.name = name;
     }
 
