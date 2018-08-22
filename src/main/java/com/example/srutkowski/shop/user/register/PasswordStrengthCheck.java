@@ -1,9 +1,8 @@
-package com.example.srutkowski.shop.user;
+package com.example.srutkowski.shop.user.register;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
-import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 

@@ -1,6 +1,6 @@
 package com.example.srutkowski.shop.order;
 
-import com.example.srutkowski.shop.product.Product;
+import com.example.srutkowski.shop.product.domain.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

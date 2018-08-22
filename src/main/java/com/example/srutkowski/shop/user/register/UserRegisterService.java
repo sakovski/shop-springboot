@@ -1,5 +1,10 @@
-package com.example.srutkowski.shop.user;
+package com.example.srutkowski.shop.user.register;
 
+import com.example.srutkowski.shop.user.RoleType;
+import com.example.srutkowski.shop.user.UserCreateService;
+import com.example.srutkowski.shop.user.domain.User;
+import com.example.srutkowski.shop.user.domain.UserRole;
+import com.example.srutkowski.shop.user.domain.UserRoleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

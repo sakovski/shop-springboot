@@ -1,5 +1,7 @@
 package com.example.srutkowski.shop.product;
 
+import com.example.srutkowski.shop.product.domain.Product;
+import com.example.srutkowski.shop.product.domain.ProductRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

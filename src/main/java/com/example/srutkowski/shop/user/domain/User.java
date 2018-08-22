@@ -1,14 +1,11 @@
-package com.example.srutkowski.shop.user;
+package com.example.srutkowski.shop.user.domain;
 
 import com.example.srutkowski.shop.order.Order;
-import com.example.srutkowski.shop.order.OrderDetails;
-import com.example.srutkowski.shop.product.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 

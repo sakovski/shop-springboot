@@ -1,4 +1,6 @@
-package com.example.srutkowski.shop.user;
+package com.example.srutkowski.shop.user.register;
+
+import com.example.srutkowski.shop.user.register.PasswordStrengthCheck;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +13,6 @@ public class RegisterForm {
     @NotBlank
     private String email;
 
-    //TODO: PASSWORD REGEX ANNOTATION
     @NotNull
     @NotBlank
     @PasswordStrengthCheck

@@ -1,12 +1,10 @@
 package com.example.srutkowski.shop.order;
 
-import com.example.srutkowski.shop.user.User;
-import com.example.srutkowski.shop.user.UserRole;
+import com.example.srutkowski.shop.user.domain.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Set;
 
 @Entity

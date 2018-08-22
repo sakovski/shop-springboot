@@ -1,4 +1,4 @@
-package com.example.srutkowski.shop.user;
+package com.example.srutkowski.shop.user.register;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;

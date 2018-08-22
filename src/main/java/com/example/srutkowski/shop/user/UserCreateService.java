@@ -1,5 +1,7 @@
 package com.example.srutkowski.shop.user;
 
+import com.example.srutkowski.shop.user.domain.User;
+import com.example.srutkowski.shop.user.domain.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,8 +1,9 @@
-package com.example.srutkowski.shop.product;
+package com.example.srutkowski.shop.product.domain;
+
+import com.example.srutkowski.shop.product.domain.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 

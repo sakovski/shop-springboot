@@ -1,12 +1,8 @@
-package com.example.srutkowski.shop.product;
-
-import com.example.srutkowski.shop.order.OrderDetails;
+package com.example.srutkowski.shop.product.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 @Table(name="product")
