@@ -5,6 +5,8 @@ import com.example.srutkowski.shop.order.OrderDetails;
 import com.example.srutkowski.shop.product.Product;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -19,10 +21,12 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(name = "email")
+    @NotBlank
+    @Email
     private String email;
 
-    @Column(name = "password")
+    @NotNull
+    @NotBlank
     private String password;
 
     @NotNull
@@ -30,13 +34,11 @@ public class User {
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
 
-    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "enabled")
+    @NotNull
     private boolean enabled;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)

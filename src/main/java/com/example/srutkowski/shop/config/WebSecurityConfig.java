@@ -1,5 +1,6 @@
 package com.example.srutkowski.shop.config;
 
+import com.nulabinc.zxcvbn.Zxcvbn;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -53,5 +54,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
+    }
+
+    @Bean
+    public Zxcvbn passwordStrengthCheck() {
+        return new Zxcvbn();
     }
 }

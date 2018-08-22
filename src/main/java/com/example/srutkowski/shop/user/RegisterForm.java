@@ -14,11 +14,13 @@ public class RegisterForm {
     //TODO: PASSWORD REGEX ANNOTATION
     @NotNull
     @NotBlank
+    @PasswordStrengthCheck
     private String password;
 
     //TODO: CONFIRM PASSWORD COMAPARE WITH PASSWORD ANNOTATION
     @NotNull
     @NotBlank
+    @PasswordStrengthCheck
     private String confirmPassword;
 
     private String firstName;
